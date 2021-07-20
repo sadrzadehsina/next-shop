@@ -3,12 +3,12 @@ import PrimaryButton from '../button/primary-button';
 
 const Header = () => {
   return (
-    <header class="text-gray-600 body-font">
-      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-        <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+    <header class="body-font text-gray-600">
+      <div class="container flex flex-col flex-wrap items-center mx-auto p-5 md:flex-row">
+        <a class="flex items-center mb-4 md:mb-0">
           <Logo />
         </a>
-        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        <nav class="flex flex-wrap items-center justify-center text-base md:ml-auto">
           <a class="mr-5 hover:text-gray-900">First Link</a>
           <a class="mr-5 hover:text-gray-900">Second Link</a>
           <a class="mr-5 hover:text-gray-900">Third Link</a>
