@@ -2,7 +2,7 @@ import cn from 'classnames';
 import { noop } from '../utils';
 import BaseButton from './button';
 
-const PrimaryButton = ({ disabled = false, onClick = noop }) => {
+const PrimaryButton = ({ children, disabled = false, onClick = noop }) => {
   const classNames = cn({
     'text-white': true,
     'bg-blue-600': true,
@@ -13,7 +13,7 @@ const PrimaryButton = ({ disabled = false, onClick = noop }) => {
 
   return (
     <BaseButton className={classNames} disabled={disabled} onClick={onClick}>
-      Primary Button
+      {children}
     </BaseButton>
   );
 };

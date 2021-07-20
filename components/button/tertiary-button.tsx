@@ -2,7 +2,7 @@ import cn from 'classnames';
 import { noop } from '../utils';
 import BaseButton from './button';
 
-const TertiaryButton = ({ disabled = false, onClick = noop }) => {
+const TertiaryButton = ({ children, disabled = false, onClick = noop }) => {
   const classNames = cn({
     'text-white': true,
     'bg-red-600': true,
@@ -10,9 +10,11 @@ const TertiaryButton = ({ disabled = false, onClick = noop }) => {
     'disabled:opacity-50': disabled,
     'cursor-default': disabled,
   });
-  <BaseButton className={classNames} disabled={disabled} onClick={onClick}>
-    Tertiary Button
-  </BaseButton>;
+  return (
+    <BaseButton className={classNames} disabled={disabled} onClick={onClick}>
+      {children}
+    </BaseButton>
+  );
 };
 
 export default TertiaryButton;

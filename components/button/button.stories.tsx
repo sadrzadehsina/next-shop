@@ -14,13 +14,13 @@ const SecondaryTemplate = (args) => <SecondaryButton {...args} />;
 const TertiaryTemplate = (args) => <TertiaryButton {...args} />;
 
 export const Primary = PrimaryTemplate.bind({});
-Primary.args = {};
+Primary.args = { children: 'Primary Button' };
 
 export const Secondary = SecondaryTemplate.bind({});
-Secondary.args = {};
+Secondary.args = { children: 'Secondary Button' };
 
 export const Tertiary = TertiaryTemplate.bind({});
-Tertiary.args = {};
+Tertiary.args = { children: 'Tertiary Button' };
 
 export const Disabled = PrimaryTemplate.bind({});
 Disabled.args = {
