@@ -1,20 +1,5 @@
 import Head from 'next/head';
-import Image from 'next/image';
-import { PrismaClient } from '@prisma/client';
-
-const prisma = new PrismaClient();
-
-export async function getStaticProps() {
-  const products = await prisma.product.findMany();
-
-  return {
-    props: { products },
-  };
-}
-
-export default function Home({ products }) {
-  console.log(products);
-
+export default function Home() {
   return (
     <div>
       <Head>
