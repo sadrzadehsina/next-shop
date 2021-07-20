@@ -27,3 +27,9 @@ Disabled.args = {
   ...Primary.args,
   disabled: true,
 };
+
+export const Link = PrimaryTemplate.bind({});
+Link.args = {
+  ...Primary.args,
+  link: true,
+};
