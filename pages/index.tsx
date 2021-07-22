@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Visitor from '../layouts/visitor/visitor';
 export default function Home() {
   return (
     <div>
@@ -11,3 +12,5 @@ export default function Home() {
     </div>
   );
 }
+
+Home.getLayout = (page) => <Visitor>{page}</Visitor>;
