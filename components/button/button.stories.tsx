@@ -4,6 +4,8 @@ import PrimaryButton from './primary-button';
 import SecondaryButton from './secondary-button';
 import TertiaryButton from './tertiary-button';
 
+import Icon from '../icon/icon';
+
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
   title: 'Components/Button',
@@ -32,4 +34,10 @@ export const Link = PrimaryTemplate.bind({});
 Link.args = {
   ...Primary.args,
   link: true,
+};
+
+export const WithIcon = PrimaryTemplate.bind({});
+WithIcon.args = {
+  ...Primary.args,
+  Icon: () => <Icon name="annotation" />,
 };

@@ -6,6 +6,7 @@ const PrimaryButton = ({
   children,
   disabled = false,
   link = false,
+  Icon,
   onClick = noop,
 }) => {
   const classNames = cn({
@@ -22,6 +23,7 @@ const PrimaryButton = ({
 
   return (
     <BaseButton className={classNames} disabled={disabled} onClick={onClick}>
+      {Icon && <Icon />}
       {children}
     </BaseButton>
   );
