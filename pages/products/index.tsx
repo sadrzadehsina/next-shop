@@ -29,19 +29,21 @@ export default function Products({ products }) {
                   href={`/products/${product.id}`}
                   class="relative block h-96 rounded overflow-hidden"
                 >
-                  <Image
-                    class="block w-full h-full object-cover object-top"
-                    width="400"
-                    height="400"
-                    src={product.image}
-                  />
+                  <a>
+                    <Image
+                      class="block w-full h-full object-cover object-top"
+                      width="400"
+                      height="400"
+                      src={product.image}
+                    />
+                    <div class="mt-4">
+                      <h2 class="title-font text-gray-900 text-lg font-medium">
+                        {product.name}
+                      </h2>
+                      <p class="mt-1">${product.price}</p>
+                    </div>
+                  </a>
                 </Link>
-                <div class="mt-4">
-                  <h2 class="title-font text-gray-900 text-lg font-medium">
-                    {product.name}
-                  </h2>
-                  <p class="mt-1">${product.price}</p>
-                </div>
               </div>
             ))}
           </div>
