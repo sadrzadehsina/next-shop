@@ -1,27 +1,18 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
+import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { PrismaClient } from '@prisma/client';
 
-const prisma = new PrismaClient();
+import prisma from '../../db';
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const products = await prisma.product.findMany();
-
-  const paths = products.map((product) => ({
-    params: { id: product.id.toString() },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-};
-
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const product = await prisma.product.findUnique({
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const {
+    query: { id },
+  } = context;
+  const product = await prisma.product.findFirst({
     where: {
-      id: parseInt(params.id),
+      id: {
+        equals: id as string,
+      },
     },
   });
 
