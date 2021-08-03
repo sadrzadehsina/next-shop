@@ -1,12 +1,13 @@
 import { Fragment } from 'react';
+import { Container } from 'react-component-library';
 import Header from '../../components/header/header';
 
 const Visitor = ({ children }) => {
   return (
-    <Fragment>
+    <Container>
       <Header />
       <main>{children}</main>
-    </Fragment>
+    </Container>
   );
 };
 

@@ -1,6 +1,6 @@
 import Logo from '../logo/logo';
-import PrimaryButton from '../button/primary-button';
 import Link from 'next/link';
+import { Button } from 'react-component-library';
 
 const Header = () => {
   return (
@@ -12,7 +12,7 @@ const Header = () => {
           </a>
         </Link>
         <div className="flex flex-wrap md:ml-auto"></div>
-        <PrimaryButton>Sign In</PrimaryButton>
+        <Button type="primary">Sign In</Button>
       </div>
     </header>
   );
