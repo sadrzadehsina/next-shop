@@ -1,9 +1,9 @@
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 
 export default function Home() {
-  const router = useRouter();
+  // const router = useRouter();
 
-  router.push('/products');
+  // router.push('/products');
 
   return null;
 }
