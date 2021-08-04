@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Card, Button } from 'react-component-library';
+import { Card, Button, Truncate } from 'react-component-library';
 
 const Header = ({ image }) => (
   <Image
@@ -18,7 +18,9 @@ const Body = ({ name, price, description }) => {
         <h1 className="text-2xl">{name}</h1>
         <h6 className="text-lg">{price}</h6>
       </div>
-      <p>{description}</p>
+      <Truncate>
+        <p>{description}</p>
+      </Truncate>
     </div>
   );
 };
