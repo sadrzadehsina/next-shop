@@ -38,7 +38,7 @@ const Footer = () => {
 
 const ItemCard = ({ image, name, price, description }) => {
   return (
-    <div style={{ width: '400px' }}>
+    <div>
       <Card
         renderHeader={() => <Header image={image} />}
         renderBody={() => (
