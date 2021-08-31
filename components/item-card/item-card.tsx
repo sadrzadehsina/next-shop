@@ -35,13 +35,15 @@ const Footer = () => {
 
 const ItemCard = ({ image, name, price, description }) => {
   return (
-    <Card
-      renderHeader={() => <Header image={image} />}
-      renderBody={() => (
-        <Body name={name} price={price} description={description} />
-      )}
-      renderFooter={() => <Footer />}
-    />
+    <div style={{ width: '400px' }}>
+      <Card
+        renderHeader={() => <Header image={image} />}
+        renderBody={() => (
+          <Body name={name} price={price} description={description} />
+        )}
+        renderFooter={() => <Footer />}
+      />
+    </div>
   );
 };
 
