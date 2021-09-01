@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Card, Button, Truncate } from 'react-component-library';
 import Price from '../price';
+import { motion } from 'framer-motion';
 
 const Header = ({ image }) => (
   <Image
@@ -38,7 +39,7 @@ const Footer = () => {
 
 const ItemCard = ({ image, name, price, description }) => {
   return (
-    <div>
+    <motion.div whileHover={{ scale: 1.02 }}>
       <Card
         renderHeader={() => <Header image={image} />}
         renderBody={() => (
@@ -46,7 +47,7 @@ const ItemCard = ({ image, name, price, description }) => {
         )}
         renderFooter={() => <Footer />}
       />
-    </div>
+    </motion.div>
   );
 };
 
