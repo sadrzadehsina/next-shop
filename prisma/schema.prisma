@@ -25,11 +25,23 @@ enum Size {
   xxl
 }
 
+enum Color {
+  red
+  green
+  black
+  white
+  purple
+  yellow
+  pink
+  blue
+}
+
 model Product {
   id          String      @id @default(cuid())
   name        String
   price       Int
   size        Size
+  color       Color[]
   image       String?
   description String
   detail      String?
