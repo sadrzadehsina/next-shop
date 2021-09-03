@@ -32,7 +32,7 @@ const Header = () => {
           </a>
         </Link>
         <div className="flex flex-wrap pr-2 md:ml-auto">
-          {session.user.email && <span>{session.user.email}</span>}
+          {session && session.user.email && <span>{session.user.email}</span>}
         </div>
         <LoadingOrButton session={session} loading={loading} />
       </div>

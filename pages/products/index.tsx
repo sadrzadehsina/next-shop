@@ -25,12 +25,16 @@ export default function Products({ products }) {
         <div className="flex flex-wrap -m-4">
           {products.map((product) => (
             <div className="p-4 w-full md:w-1/2 lg:w-1/4" key={product.id}>
-              <ItemCard
-                image={product.image}
-                name={product.name}
-                price={product.price}
-                description={product.description}
-              />
+              <Link href={`/products/${product.id}`}>
+                <a>
+                  <ItemCard
+                    image={product.image}
+                    name={product.name}
+                    price={product.price}
+                    description={product.description}
+                  />
+                </a>
+              </Link>
             </div>
           ))}
         </div>
