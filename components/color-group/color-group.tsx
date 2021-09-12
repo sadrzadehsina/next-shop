@@ -8,6 +8,7 @@ const colors = {
   yellow: 'bg-yellow-400',
   white: 'bg-white',
   black: 'bg-black',
+  pink: 'bg-pink-500',
 };
 
 const ColorPreview = ({ color, index }) => {

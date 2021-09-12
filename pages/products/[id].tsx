@@ -3,6 +3,10 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 import prisma from '../../db';
+import ColorGroup from '../../components/color-group';
+
+import { useQuery } from 'react-query';
+import axios from 'axios';
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const {
@@ -22,6 +26,11 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 };
 
 export default function Product({ product }) {
+  const { data, isLoading } = useQuery(
+    (product) => axios.get('/api/product/add-to-favorite'),
+    { params: { product } },
+  );
+
   return (
     <div>
       <Head>
@@ -147,9 +156,7 @@ export default function Product({ product }) {
               <div className="flex items-center mb-5 mt-6 pb-5 border-b-2 border-gray-100">
                 <div className="flex">
                   <span className="mr-3">Color</span>
-                  <button className="w-6 h-6 border-2 border-gray-300 rounded-full focus:outline-none"></button>
-                  <button className="ml-1 w-6 h-6 bg-gray-700 border-2 border-gray-300 rounded-full focus:outline-none"></button>
-                  <button className="ml-1 w-6 h-6 bg-indigo-500 border-2 border-gray-300 rounded-full focus:outline-none"></button>
+                  <ColorGroup colors={product.color} />
                 </div>
                 <div className="flex items-center ml-6">
                   <span className="mr-3">Size</span>
@@ -183,7 +190,10 @@ export default function Product({ product }) {
                 <button className="flex ml-auto px-6 py-2 text-white bg-indigo-500 hover:bg-indigo-600 border-0 rounded focus:outline-none">
                   Button
                 </button>
-                <button className="inline-flex items-center justify-center ml-4 p-0 w-10 h-10 text-gray-500 bg-gray-200 border-0 rounded-full">
+                <button
+                  onClick={() => mutation.mutate({ productId: product.id })}
+                  className="inline-flex items-center justify-center ml-4 p-0 w-10 h-10 text-gray-500 bg-gray-200 border-0 rounded-full"
+                >
                   <svg
                     fill="currentColor"
                     stroke-linecap="round"
